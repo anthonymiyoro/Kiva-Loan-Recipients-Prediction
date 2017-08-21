@@ -4,7 +4,7 @@
 
 In the first notebook we summarise the main characterisitcs of the dataset so as to know which algorithm to use in the future.
 
-[1st Notebook Exploratory Analysis](exploratory_analysis.ipynb)
+[1st Notebook (Exploratory Analysis)](exploratory_analysis.ipynb)
 
 - We first merge our 3 datasets into 1 (df.csv)
 
