@@ -27,5 +27,5 @@ df_removed_outliers=df[(((df['loan_amount']-df['loan_amount'].mean())/(df['loan_
 ```
 Our data becomes much less skewed 
 Reference-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic1.png "pic 1")
 
