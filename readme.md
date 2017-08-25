@@ -24,4 +24,8 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 # dataset without outliers
 df_removed_outliers=df[(((df['loan_amount']-df['loan_amount'].mean())/(df['loan_amount'].std())).abs()<3)] 
 
-``` Our data becomes much less skewed 
+```
+Our data becomes much less skewed 
+Reference-style: 
+![alt text][photos/pic1]
+
