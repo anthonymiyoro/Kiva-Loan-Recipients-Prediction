@@ -12,3 +12,16 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 
 - Once thats done, we check for missing values in the dataset. When we're done with exploratory analysis we then move on to feature engineering.
 
+
+[2nd Notebook (Feature Engineering)](exploratory_analysis.ipynb)
+
+- With feature engineering, we begin to attempt to answer what factors drive the loan amounts requested by Kiva borrowers.
+
+- After importing all the data created from the previous notebook, we start by removing the outlier loans.
+
+- The outlier loans are those whose amounts fall outside 3 standard deviations from the mean. After running 
+```
+# dataset without outliers
+df_removed_outliers=df[(((df['loan_amount']-df['loan_amount'].mean())/(df['loan_amount'].std())).abs()<3)] 
+
+``` Our data becomes much less skewed 
