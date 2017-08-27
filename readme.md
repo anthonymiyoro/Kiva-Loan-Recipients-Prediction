@@ -17,7 +17,8 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 
 - With feature engineering, we begin to attempt to answer what factors drive the loan amounts requested by Kiva borrowers.
 
-- After importing all the data created from the previous notebook, we start by removing the outlier loans.
+- After importing all the data created from the previous notebook, we start by removing the outlier loans. As we can see from the image below:
+![alt text][photos/pic1]
 
 - The outlier loans are those whose amounts fall outside 3 standard deviations from the mean. After running 
 ```
@@ -25,7 +26,27 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 df_removed_outliers=df[(((df['loan_amount']-df['loan_amount'].mean())/(df['loan_amount'].std())).abs()<3)] 
 
 ```
-Our data becomes much less skewed 
-Reference-style: 
-![alt text][photos/pic1]
+Our data becomes much less skewed as below:
+![alt text][photos/pic2]
+
+Unfortunately upon looking at some of the data we see that most of the loans are in fact around $250 so instead we'll remove all loans hogher than $6000 as those are rare. 
+
+- Since our data looks much less skewed we can begin working on selecting the features we deem most important. These features that determine how much we ask for in a loan can be found by asking:
+			- What job does the borrower have?
+			- Have you taken a loan before?
+			- Who is lending the money?
+			- Where do you live?
+
+- In the following cells, we went through these features and found that:
+
+	- Males ask for larger loan amounts compared to women
+	![alt text][photos/pic3]
+	- Widowed couples ask for lower loan amounts than non-widowed couples
+	![alt text][photos/pic4]
+	- The elderly ask for smaller loans
+	![alt text][photos/pic4]
+
+
+
+
 
