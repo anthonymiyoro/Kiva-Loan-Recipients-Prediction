@@ -26,6 +26,7 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 df_removed_outliers=df[(((df['loan_amount']-df['loan_amount'].mean())/(df['loan_amount'].std())).abs()<3)] 
 
 ```
+<<<<<<< HEAD
 Our data becomes much less skewed as below:
 ![alt text][photos/pic2]
 
@@ -49,4 +50,9 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 
 
 
+=======
+Our data becomes much less skewed 
+Reference-style: 
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic1.png "pic 1")
+>>>>>>> 0f4ae95696006befd1a524f292f05861ac157113
 
