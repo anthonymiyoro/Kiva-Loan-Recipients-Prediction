@@ -18,7 +18,7 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 - With feature engineering, we begin to attempt to answer what factors drive the loan amounts requested by Kiva borrowers.
 
 - After importing all the data created from the previous notebook, we start by removing the outlier loans. As we can see from the image below:
-![alt text][photos/pic1]
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic1.png "pic 1")
 
 - The outlier loans are those whose amounts fall outside 3 standard deviations from the mean. After running 
 ```
@@ -26,9 +26,8 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 df_removed_outliers=df[(((df['loan_amount']-df['loan_amount'].mean())/(df['loan_amount'].std())).abs()<3)] 
 
 ```
-<<<<<<< HEAD
 Our data becomes much less skewed as below:
-![alt text][photos/pic2]
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic2.png "Data Skewness")
 
 Unfortunately upon looking at some of the data we see that most of the loans are in fact around $250 so instead we'll remove all loans hogher than $6000 as those are rare. 
 
@@ -41,18 +40,22 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 - In the following cells, we went through these features and found that:
 
 	- Males ask for larger loan amounts compared to women
-	![alt text][photos/pic3]
-	- Widowed couples ask for lower loan amounts than non-widowed couples
-	![alt text][photos/pic4]
-	- The elderly ask for smaller loans
-	![alt text][photos/pic4]
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic3.png "Gender Loan amounts")
+	- Widowed couples ask for lower loan amounts than non-widowed couples.
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic4.png "Marital Status")
+	Men asked for more loans regardless of marital status.
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic9.png "Marital Status 2")
+	- The elderly ask for smaller loan amounts.
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic5.png "Elderly Loan amounts")
+	- Borrowers with children requested for lower loan amounts
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic6.png "Children Loan amounts").
+	Those with 2 to 6 children asked for the highest amount in loans with the amount decreasing with an increase in the number of children.
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic10.png "Children Loan amounts2").
+	- Surprisingly, the elderly appeared to ask for higher loan amounts from the ages of 60 to 80 while females of 30 years of age asked for the lowest loan amounts on average. For males, the loan amounts requested stagnated from 30 to 50 years of age.
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic10.png "Loan amounts requested by age").
 
 
 
 
-=======
-Our data becomes much less skewed 
-Reference-style: 
-![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic1.png "pic 1")
->>>>>>> 0f4ae95696006befd1a524f292f05861ac157113
+
 
