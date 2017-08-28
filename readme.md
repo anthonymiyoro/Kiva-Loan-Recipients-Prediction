@@ -40,19 +40,32 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 - In the following cells, we went through these features and found that:
 
 	- Males ask for larger loan amounts compared to women
+
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic3.png "Gender Loan amounts")
+
 	- Widowed couples ask for lower loan amounts than non-widowed couples.
+
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic4.png "Marital Status")
-	Men asked for more loans regardless of marital status.
+
+		Men asked for more loans regardless of marital status.
+
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic9.png "Marital Status 2")
+
 	- The elderly ask for smaller loan amounts.
+
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic5.png "Elderly Loan amounts")
+
 	- Borrowers with children requested for lower loan amounts
+
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic6.png "Children Loan amounts").
-	Those with 2 to 6 children asked for the highest amount in loans with the amount decreasing with an increase in the number of children.
+
+		Those with 2 to 6 children asked for the highest amount in loans with the amount decreasing with an increase in the number of children.
+
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic10.png "Children Loan amounts2").
+
 	- Surprisingly, the elderly appeared to ask for higher loan amounts from the ages of 60 to 80 while females of 30 years of age asked for the lowest loan amounts on average. For males, the loan amounts requested stagnated from 30 to 50 years of age.
-	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic10.png "Loan amounts requested by age").
+
+	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic11.png "Loan amounts requested by age").
 
 
 
