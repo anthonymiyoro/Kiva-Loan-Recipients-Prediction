@@ -59,9 +59,27 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic11.png "Loan amounts requested by age").
 
+
+[3rd Notebook (Linear Regression)](linear_regression.ipynb)
+
 - Apart from using boxplots, barcharts and pie charts to test our features, we can use linear regression. Before we do this however, we must remember that the basic assumption underlying linear regression is that there is a normal distribution of variables. To ensure this we run a skew test with a result of 0 meaning a normally distributed dataset with a skew score of -+5 deemed as acceptable.
 
-- Once that is done we check the different features for multicollearity using Pandas correlation matrix. Those with high correliniarity can be removed as features. 
+- Once that is done we check the different features for multicollearity using Pandas correlation matrix. Those with high correliniarity can be removed as features.
+
+- We can then split our data into 2 sets, training and test. From now we'll run a regression on the train set alone. The outcome can be explained as below:
+
+'''
+   p-value => probability of getting results as extreme as those witnessed [Ideal Value: <=0.05]
+   [Read more here.](http://www.investopedia.com/terms/s/standard-error.asp). 
+
+   Adjusted R Squared => Adjusted R Squared is an explanation of how much of the outcome features can be explained by the models explanatory features.
+
+   Intercept => Predicted loan amount regardless of explanatory features
+
+   [+-Feature] => The amount by which the loan amount (Located at the intercept) will be affected
+''' 
+- We first do univariate regressions (1 vairable) on each of our features from which we combine our best features in a multivariate regression. The output of a univariate regression should appear as below:
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic12.png "Unvariate Regression").
 
 
 
