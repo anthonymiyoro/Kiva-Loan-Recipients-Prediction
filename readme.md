@@ -39,21 +39,13 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 
 - In the following cells, we went through these features and found that:
 
-	- Males ask for larger loan amounts compared to women
-
-	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic3.png "Gender Loan amounts")
-
 	- Widowed couples ask for lower loan amounts than non-widowed couples.
 
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic4.png "Marital Status")
 
-		Men asked for more loans regardless of marital status.
+		Men asked for higher loan amounts regardless of marital status.
 
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic9.png "Marital Status 2")
-
-	- The elderly ask for smaller loan amounts.
-
-	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic5.png "Elderly Loan amounts")
 
 	- Borrowers with children requested for lower loan amounts
 
@@ -66,6 +58,10 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 	- Surprisingly, the elderly appeared to ask for higher loan amounts from the ages of 60 to 80 while females of 30 years of age asked for the lowest loan amounts on average. For males, the loan amounts requested stagnated from 30 to 50 years of age.
 
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic11.png "Loan amounts requested by age").
+
+- Apart from using boxplots, barcharts and pie charts to test our features, we can use linear regression. Before we do this however, we must remember that the basic assumption underlying linear regression is that there is a normal distribution of variables. To ensure this we run a skew test with a result of 0 meaning a normally distributed dataset with a skew score of -+5 deemed as acceptable.
+
+- Once that is done we check the different features for multicollearity using Pandas correlation matrix. Those with high correliniarity can be removed as features. 
 
 
 
