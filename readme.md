@@ -80,7 +80,7 @@ Unfortunately upon looking at some of the data we see that most of the loans are
    [+-Feature] => The amount by which the loan amount (Located at the intercept) will be affected
 ```
 - We first do univariate regressions (1 vairable) on each of our features from which we combine our best features in a multivariate regression. The output of a univariate regression should appear as below:
-![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic12.png "Unvariate Regression").
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic%2012.png "Unvariate Regression").
 
 
 
