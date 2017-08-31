@@ -1,6 +1,6 @@
 # Insights from Kiva Data
 
-### This repository contains a seriess of notebooks with which we try to predict the leading factors that can predict the loan amount someone can recieve from Kiva
+### This repository contains a seriess of notebooks with which we try to predict the leading factors that influence the loan amount someone will recieve from Kiva
 
 In the first notebook we summarise the main characterisitcs of the dataset so as to know which algorithm to use in the future.
 
@@ -68,7 +68,8 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 
 - We can then split our data into 2 sets, training and test. From now we'll run a regression on the train set alone. The outcome can be explained as below:
 
-'''
+```
+
    p-value => probability of getting results as extreme as those witnessed [Ideal Value: <=0.05]
    [Read more here.](http://www.investopedia.com/terms/s/standard-error.asp). 
 
@@ -77,9 +78,9 @@ Unfortunately upon looking at some of the data we see that most of the loans are
    Intercept => Predicted loan amount regardless of explanatory features
 
    [+-Feature] => The amount by which the loan amount (Located at the intercept) will be affected
-''' 
+```
 - We first do univariate regressions (1 vairable) on each of our features from which we combine our best features in a multivariate regression. The output of a univariate regression should appear as below:
-![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic12.png "Unvariate Regression").
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic%2012.png "Unvariate Regression").
 
 
 
