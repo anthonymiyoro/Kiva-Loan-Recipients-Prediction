@@ -78,9 +78,20 @@ Unfortunately upon looking at some of the data we see that most of the loans are
    Intercept => Predicted loan amount regardless of explanatory features
 
    [+-Feature] => The amount by which the loan amount (Located at the intercept) will be affected
+
 ```
 - We first do univariate regressions (1 vairable) on each of our features from which we combine our best features in a multivariate regression. The output of a univariate regression should appear as below:
+
 ![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic%2012.png "Unvariate Regression").
+
+### INTERPRATION
+- From our diagram above we see a p-value of 0. A small p-value of <=0.05 says the result is not of random chance (which is a good result).
+- The coefficient shows how the amount of influence the feature has on y which may be -ve or +ve.
+
+- The result of our regression shows that a business owned by a business recieves on average a loan $28.7 less than the average loan amount.
+
+  
+
 
 
 
