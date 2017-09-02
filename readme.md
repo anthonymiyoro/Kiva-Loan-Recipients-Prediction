@@ -4,7 +4,7 @@
 
 In the first notebook we summarise the main characterisitcs of the dataset so as to know which algorithm to use in the future.
 
-[1st Notebook (Exploratory Analysis)](exploratory_analysis.ipynb)
+## [1st Notebook (Exploratory Analysis)](exploratory_analysis.ipynb)
 
 - We first merge our 3 datasets into 1 (df.csv)
 
@@ -13,7 +13,7 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 - Once thats done, we check for missing values in the dataset. When we're done with exploratory analysis we then move on to feature engineering.
 
 
-[2nd Notebook (Feature Engineering)](exploratory_analysis.ipynb)
+## [2nd Notebook (Feature Engineering)](exploratory_analysis.ipynb)
 
 - With feature engineering, we begin to attempt to answer what factors drive the loan amounts requested by Kiva borrowers.
 
@@ -60,7 +60,7 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic11.png "Loan amounts requested by age").
 
 
-[3rd Notebook (Linear Regression)](linear_regression.ipynb)
+## [3rd Notebook (Linear Regression)](linear_regression.ipynb)
 
 - Apart from using boxplots, barcharts and pie charts to test our features, we can use linear regression. Before we do this however, we must remember that the basic assumption underlying linear regression is that there is a normal distribution of variables. To ensure this we run a skew test with a result of 0 meaning a normally distributed dataset with a skew score of -+5 deemed as acceptable.
 
@@ -88,9 +88,30 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 - From our diagram above we see a p-value of 0. A small p-value of <=0.05 says the result is not of random chance (which is a good result).
 - The coefficient shows how the amount of influence the feature has on y which may be -ve or +ve.
 
-- The result of our regression shows that a business owned by a business recieves on average a loan $28.7 less than the average loan amount.
+- The result of our regression shows that a business owned by a business recieves on average a loan $28.7 less than the average loan amount. While having a p-value of 0 shows that we can be confident about this value, it has a low adjusted R-squared (0.001)showing that the predicting value of this value is very low. 
 
-  
+- We can try running a multivariate regression to improve our adjusted R-squared and we end up with the outcome below:
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic13.png "Multivariate Regression").
+
+- We used 24 different features using the sklearn template below with sector containing all the different loan sectors we found important:
+
+'''
+model = sm.ols(formula="loan_amount ~ borrower_count + sector + kids + gender + widowed + posted_year +\
+                days_to_expire + partner_profitability + eco_friendly + animals + elderly", data=train_set)
+
+model_results = model1.fit()
+
+print(model_results.summary())
+
+'''
+
+From the image above our adjusted R-squares has improved to .211 as a result of the numerous features we've just added.
+
+
+
+
+
 
 
 
