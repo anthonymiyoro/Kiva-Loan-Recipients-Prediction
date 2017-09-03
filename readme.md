@@ -107,7 +107,16 @@ print(model_results.summary())
 '''
 
 From the image above our adjusted R-squares has improved to .211 as a result of the numerous features we've just added.
+While .211 is a good improvement, ots not good enpugh. We begin by taking a look at out features again and only selecting the features that we think are important. After droping the features we dont need, we begin by checking for multicolliniarity to make sure that we don't have any unneccesary features. The following was the outcome:
 
+	- gender_female and gender_male are perfectly correlated. 
+	- sector_agriculture and activity_farming are correlated.
+	- country_kiambu and province_central are highly correlated (They are basically the same place)
+	- number of tags is very correlated with any given tag. This makes sense because most lenders only have one tag.
+
+We then build a correlation matrix collecting the top correlations and remove county, activity and gender_male. The number of tags that a loan has are alis removed as features as they appeared to have started use in later years.
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic14.png "Loan amounts requested by age").
 
 
 
