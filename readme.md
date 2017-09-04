@@ -4,7 +4,7 @@
 
 In the first notebook we summarise the main characterisitcs of the dataset so as to know which algorithm to use in the future.
 
-## [1st Notebook (Exploratory Analysis)](exploratory_analysis.ipynb)
+### [1st Notebook (Exploratory Analysis)](exploratory_analysis.ipynb)
 
 - We first merge our 3 datasets into 1 (df.csv)
 
@@ -13,7 +13,7 @@ In the first notebook we summarise the main characterisitcs of the dataset so as
 - Once thats done, we check for missing values in the dataset. When we're done with exploratory analysis we then move on to feature engineering.
 
 
-## [2nd Notebook (Feature Engineering)](exploratory_analysis.ipynb)
+### [2nd Notebook (Feature Engineering)](exploratory_analysis.ipynb)
 
 - With feature engineering, we begin to attempt to answer what factors drive the loan amounts requested by Kiva borrowers.
 
@@ -60,7 +60,7 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 	![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic11.png "Loan amounts requested by age").
 
 
-## [3rd Notebook (Linear Regression)](linear_regression.ipynb)
+### [3rd Notebook (Linear Regression)](linear_regression.ipynb)
 
 - Apart from using boxplots, barcharts and pie charts to test our features, we can use linear regression. Before we do this however, we must remember that the basic assumption underlying linear regression is that there is a normal distribution of variables. To ensure this we run a skew test with a result of 0 meaning a normally distributed dataset with a skew score of -+5 deemed as acceptable.
 
@@ -97,12 +97,14 @@ Unfortunately upon looking at some of the data we see that most of the loans are
 - We used 24 different features using the sklearn template below with sector containing all the different loan sectors we found important:
 
 '''
+
 model = sm.ols(formula="loan_amount ~ borrower_count + sector + kids + gender + widowed + posted_year +\
                 days_to_expire + partner_profitability + eco_friendly + animals + elderly", data=train_set)
 
 model_results = model1.fit()
 
 print(model_results.summary())
+
 
 '''
 
@@ -114,9 +116,47 @@ While .211 is a good improvement, ots not good enpugh. We begin by taking a look
 	- country_kiambu and province_central are highly correlated (They are basically the same place)
 	- number of tags is very correlated with any given tag. This makes sense because most lenders only have one tag.
 
-We then build a correlation matrix collecting the top correlations and remove county, activity and gender_male. The number of tags that a loan has are alis removed as features as they appeared to have started use in later years.
+We then build a correlation matrix collecting the top correlations and remove county, activity and gender_male. The number of tags that a loan has are also removed as features as they appeared to have started use in later years.
 
 ![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/pic14.png "Loan amounts requested by age").
+
+After working on correlation, we look at our final features and chexk them for any null values. Upon finding none, we split our data into trainig data and test data. We then run a multivariate regression on the remaining features using the training data. Once thats done, we run the same regression on our test data.
+
+Both our training and test Adjusted R-squareds are low which suggests underfitting.
+
+## DECISION TREES
+
+### BAGGING
+Upon running a single decision tree, our training data set has a very high R^2 of 0.99 while the test R^2 is low with 0.28. This may be a result of overfitting. 
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/training.png "Training results").
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/test2.png "Testing results").
+
+To overcome this issue, we can use bagging with sklearns bagging regressor allowing us to measure the out of bag score which calculates the error rate of the predictions on the sample not used while training an individual tree. 
+
+The training score has reduced while the test score has increased which is a good sign. The data appears to be overfitting less in the training set less, improving its ability to predict loan amounts on unseen samples.
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/training2.png "Training results 2").
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/test2.png "Testing results 2").
+
+Upon increasing the number of trees from 10 to 100, we see a further imporovement on all scores. This tells us that splitting the dataset to more trees leads to a moire accurate prediction of the loan amount.
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/splitting.png "Spliting results").
+
+### RANDOM FOREST
+
+There is still a large descripancy between the training and test data due to the high correlation in the decision trees. We can use a random forest regressor to de-correlate the trees as it only considers a random sub-sample of the features at each split.
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/training3.png "Training results 3").
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/test3.png "Testing results 3").
+
+
+We then look at what features are driving our models preditions by looking at what percentage of our model each feature is driving. These features are then illustrated below:
+
+![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/features.png "Explanatory features").
 
 
 
