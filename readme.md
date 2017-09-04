@@ -158,6 +158,8 @@ We then look at what features are driving our models preditions by looking at wh
 
 ![alt text](https://github.com/anthonymiyoro/kivaData/blob/master/photos/features.png "Explanatory features").
 
+There doesnt appear to be a clear explanatory feature with the highest being above 20% but all the features combined lead to predictions of R^2=0.67  
+
 
 
 
